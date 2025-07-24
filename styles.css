@@ -246,6 +246,44 @@ a {
     line-height: 1.25rem;
 }
 
+.botoes-tecnologias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.btn-tec {
+    padding: 0.3rem 0.7rem;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: white;
+    background-color: #4a5568; /* Cor base genérica */
+    text-transform: uppercase;
+}
+
+.btn-tec.html { background-color: #e34c26; }
+.btn-tec.css { background-color: #264de4; }
+.btn-tec.js { background-color: #f0db4f; color: #000; }
+.btn-tec.php { background-color: #8892be; }
+
+.btn-repo {
+    background-color: #6b46c1;
+    padding: 0.3rem 0.7rem;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-repo:hover {
+    background-color: #553c9a;
+}
+
 .contato {
     padding: 6rem 2rem
 }
