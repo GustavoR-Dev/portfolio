@@ -76,7 +76,7 @@
     });
 
     function startAutoSlide() {
-        interval = setInterval(nextSlide, 10000); // troca a cada 5 segundos
+        interval = setInterval(nextSlide, 15000); 
     }
 
     function resetInterval() {
