@@ -187,35 +187,6 @@ a {
     margin-bottom: 40px;
 }
 
-
-.projetos-container {
-    display: flex;
-    overflow: hidden; 
-    scroll-behavior: smooth;
-    gap: 2rem;
-    padding: 1rem 0;
-    justify-content: center;
-}
-
-.projetos-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 16px;
-    backdrop-filter: blur(5px);
-    border: 1px solid var(--vidro);
-    overflow: hidden;
-    transition: all 0.5s ease;
-    cursor: pointer;
-
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    opacity: 0;
-    transform: translateY(20px);
-    display: none;
-
-    width: calc(33.333% - 1.34rem); /* 3 cards por linha com gap de 2rem */
-    min-width: 300px; /* evita colapsar demais em telas pequenas */
-    flex-shrink: 0;   /* impede encolhimento automático */
-}
-
 .projetos-card.show {
     display: block;
     opacity: 1;
@@ -389,14 +360,66 @@ a {
 
 .projetos-container {
     display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth;
+    overflow-x: auto; /* Permite o scroll horizontal */
+    scroll-behavior: smooth; /* ESSENCIAL para a animação de rolagem */
     gap: 2rem;
-    padding: 1rem 0;
+    padding: 1rem;
+    /* Adiciona "snap" para que a rolagem pare nos cards */
+    scroll-snap-type: x mandatory; 
+    /* Esconde a barra de rolagem visualmente */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
 
 .projetos-container::-webkit-scrollbar {
-    display: none; /* oculta scrollbar no Chrome */
+    display: none; /* Chrome, Safari e Opera */
+}
+
+.projetos-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--vidro);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição mais suave */
+    cursor: pointer;
+
+    /* Define a largura e impede que o card encolha */
+    flex-shrink: 0;
+    width: calc(33.333% - 1.5rem); /* 3 cards por linha, ajustado para o gap */
+    min-width: 300px; 
+    
+    /* Alinha o card no início do container ao "snappar" */
+    scroll-snap-align: start;
+}
+
+@media (max-width: 1200px) {
+    .projetos-card {
+        /* Ajusta para 2 cards por linha */
+        width: calc(50% - 1rem); 
+    }
+}
+
+/* Para telas de até 768px (Celulares e tablets em modo retrato) */
+@media (max-width: 768px) {
+    .projetos-card {
+        /* Ajusta para 1 card por linha, ocupando 90% da tela */
+        width: 90%;
+        min-width: unset; /* Remove a largura mínima para permitir flexibilidade */
+    }
+
+    .arrow-btn {
+        /* Em telas menores, as setas podem ser menores ou ocultas se preferir */
+        width: 10px;
+        height: 10px;
+    }
+}
+
+/* Opcional: Ocultar setas em telas muito pequenas (o usuário usa o toque) */
+@media (max-width: 576px) {
+    .arrow-btn {
+        display: none;
+    }
 }
 
 .arrow-btn {

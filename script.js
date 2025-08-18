@@ -1,89 +1,69 @@
-
-        function enviarWhatsapp(event) {
-        event.preventDefault();
-
-        const nome = document.getElementById('nome').value;
-        const mensagem = document.getElementById('mensagem').value;
-        const telefone = '5585992376342';
-        
-        const texto = `Olá! Me chamo ${nome}, ${mensagem}`;
-        const msgFormatada = encodeURIComponent(texto);
-        
-        const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
-        
-        console.log(url);
-
-        window.open(url, '_blank');
-        }
-   
-
+// --- LÓGICA DO CARROSSEL DE PROJETOS (VERSÃO OTIMIZADA) ---
+document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('projetos-container');
-    const cards = Array.from(container.children);
     const prevBtn = document.getElementById('prev');
     const nextBtn = document.getElementById('next');
-    const visibleCards = 3;
-    let startIndex = 0;
-    let interval;
 
-    function updateCarousel() {
-        cards.forEach((card, index) => {
-            card.classList.remove('show');
-            if (index >= startIndex && index < startIndex + visibleCards) {
-                setTimeout(() => {
-                    card.style.display = 'block';
-                    requestAnimationFrame(() => {
-                        card.classList.add('show');
-                    });
-                }, 10);
-            } else {
-                card.style.display = 'none';
-            }
+    if (container && prevBtn && nextBtn) {
+        const scrollAmount = () => {
+            // Pega o primeiro card visível para medir sua largura total (incluindo o gap)
+            const firstCard = container.querySelector('.projetos-card');
+            if (!firstCard) return 300; // Valor padrão caso não encontre o card
+
+            const cardStyle = window.getComputedStyle(firstCard);
+            const cardMargin = parseFloat(cardStyle.marginRight) || 0; // Pega a margem se houver
+            const cardWidth = firstCard.offsetWidth; // Largura total do card
+            
+            // O valor do scroll é a largura do card + o gap entre eles (que está no container)
+            const containerStyle = window.getComputedStyle(container);
+            const gap = parseFloat(containerStyle.gap) || 20; // Pega o valor do 'gap'
+
+            return cardWidth + gap;
+        };
+
+        // Função para rolar para o próximo projeto
+        nextBtn.addEventListener('click', () => {
+            container.scrollBy({
+                left: scrollAmount(),
+                behavior: 'smooth'
+            });
+        });
+
+        // Função para rolar para o projeto anterior
+        prevBtn.addEventListener('click', () => {
+            container.scrollBy({
+                left: -scrollAmount(),
+                behavior: 'smooth'
+            });
         });
     }
+});
 
-    function nextSlide() {
-        if (startIndex + visibleCards < cards.length) {
-            startIndex += visibleCards;
-        } else {
-            startIndex = 0; // reinicia do começo
-        }
-        updateCarousel();
+
+// --- LÓGICA DO FORMULÁRIO DE CONTATO ---
+function enviarWhatsapp(event) {
+    event.preventDefault();
+
+    const nomeInput = document.getElementById('nome');
+    const mensagemInput = document.getElementById('mensagem');
+    
+    const nome = nomeInput.value;
+    const mensagem = mensagemInput.value;
+    const telefone = '5585992376342'; // Seu número de telefone
+
+    if (!nome || !mensagem) {
+        alert('Por favor, preencha o nome e a mensagem.');
+        return;
     }
+    
+    const texto = `Olá! Me chamo ${nome}. ${mensagem}`;
+    const msgFormatada = encodeURIComponent(texto);
+    
+    const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
+    
+    window.open(url, '_blank' );
 
-    function prevSlide() {
-        if (startIndex - visibleCards >= 0) {
-            startIndex -= visibleCards;
-        } else {
-            // Calcula o índice do último grupo completo de cards
-            const total = cards.length;
-            const resto = total % visibleCards;
-
-            // Se for múltiplo exato, mostra os últimos 'visibleCards'
-            // Senão, mostra o grupo com os últimos 'resto' cards
-            startIndex = resto === 0 ? total - visibleCards : total - resto;
-        }
-        updateCarousel();
-    }
-
-    nextBtn.addEventListener('click', () => {
-        nextSlide();
-        resetInterval();
-    });
-
-    prevBtn.addEventListener('click', () => {
-        prevSlide();
-        resetInterval();
-    });
-
-    function startAutoSlide() {
-        interval = setInterval(nextSlide, 15000); 
-    }
-
-    function resetInterval() {
-        clearInterval(interval);
-        startAutoSlide();
-    }
-
-    updateCarousel();
-    startAutoSlide();
-
+    // Limpa os campos após o envio
+    nomeInput.value = '';
+    mensagemInput.value = '';
+}
