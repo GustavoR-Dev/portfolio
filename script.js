@@ -71,7 +71,7 @@ const projectDetails = {
     },
     vivavida: {
         title: "Viva Vida",
-        liveUrl: "https://cred-estacionamento.jacarei.sp.gov.br/login",
+        liveUrl: "http://casavivavida.jacarei.sp.gov.br/login.php",
         repoUrl: "https://github.com/GustavoR-Dev",
         gallery: ["./img/viva-vida-relatorios.png", "./img/viva-vida-tipo-modalidade.png", "./img/viva-vida-lista.png"],
         problem: "O sistema precisava de uma forma de identificar exclusivamente os munícipes em lista de espera de uma modalidade específica, sem incluir aqueles já matriculados em outras atividades. Esse filtro era essencial para o planejamento e gestão de vagas.",
