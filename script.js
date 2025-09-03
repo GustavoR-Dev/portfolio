@@ -71,7 +71,7 @@ const projectDetails = {
     },
     registroGeralAnimal: {
         title: "Registro Geral Animal",
-        liveUrl: "http://intranet.jacarei.sp.gov.br/dti/rga-sis/login.php",
+        liveUrl: "http://intranet.jacarei.sp.gov.br/dti/rga-sis/",
         repoUrl: "https://github.com/GustavoR-Dev",
         gallery: ["./img/rga-cadastro.png", "./img/rga-consulta.png", "./img/rga-consulta-tutor.png", "./img/rga-form.png"],
         problem: "O sistema não apresentava o mesmo template visual de header, footer e sidebar nas páginas, o que não mantinha a identidade visual. Além disso, o processo de cadastro e emissão do registro era demorado, exigindo múltiplas etapas e entradas de dados repetitivas.",
