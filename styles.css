@@ -63,6 +63,17 @@ body {
 /* MOBILE */
 @media (max-width: 768px) {
 
+    .foto-perfil {
+        width: 220px;
+        height: 220px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        margin: 20px 0;
+        line-height: 1.2;
+    }
+
     .navegacao {
         justify-content: space-between;
     }
@@ -443,29 +454,6 @@ a {
 
 /* Para telas de até 768px (Celulares e tablets em modo retrato) */
 @media (max-width: 768px) {
-
-    .foto-perfil {
-        width: 220px;
-        height: 220px;
-    }
-
-    h1 {
-        font-size: 1rem;
-        margin: 20px 0;
-        line-height: 1.2;
-    }
-
-    .social-sidebar {
-        position: static;
-        transform: none;
-        flex-direction: row;
-        justify-content: center;
-        margin: 20px 0;
-    }
-
-    .cabecalho {
-        padding: 100px 1rem 2rem;
-    }
 
     .projetos-wrapper {
         gap: 0.5rem;
