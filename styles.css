@@ -30,6 +30,9 @@ body {
     width: 100%;
     z-index: 100;
     padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .menu {
@@ -37,7 +40,6 @@ body {
     justify-content: center;
     list-style: none;
     gap: 3rem;
-
 }
 
 .menu-link {
@@ -46,7 +48,45 @@ body {
     font-weight: 500;
     position: relative;
     padding: 0.5rem;
+}
 
+/* botão hamburguer escondido no desktop */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    .navegacao {
+        justify-content: space-between;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(15, 23, 42, 0.95);
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 1.5rem 0;
+        display: none;
+    }
+
+    .menu.ativo {
+        display: flex;
+    }
 }
 
 nav ul li a::after {
@@ -386,8 +426,8 @@ a {
 
     /* Define a largura e impede que o card encolha */
     flex-shrink: 0;
-    width: calc(33.333% - 1.5rem); /* 3 cards por linha, ajustado para o gap */
-    min-width: 300px; 
+    width: calc(33.333% - 1.5rem);
+    min-width: 320px;
     
     /* Alinha o card no início do container ao "snappar" */
     scroll-snap-align: start;
@@ -402,16 +442,46 @@ a {
 
 /* Para telas de até 768px (Celulares e tablets em modo retrato) */
 @media (max-width: 768px) {
+
+    .projetos-wrapper {
+        gap: 0.5rem;
+        padding: 0;
+    }
+
+    .projetos-container {
+        padding: 0.5rem;
+        gap: 1rem;
+    }
+
     .projetos-card {
-        /* Ajusta para 1 card por linha, ocupando 90% da tela */
-        width: 90%;
-        min-width: unset; /* Remove a largura mínima para permitir flexibilidade */
+        width: 100%;          /* ocupa toda largura disponível */
+        min-width: 100%;      /* garante 1 card por vez */
+        margin: 0 auto;
+    }
+
+    .projetos-card-img {
+        width: 100%;
+        height: 200px;           /* altura fixa elegante */
+        object-fit: cover;       /* preenche o espaço */
+        object-position: center; /* corta centralizado */
     }
 
     .arrow-btn {
-        /* Em telas menores, as setas podem ser menores ou ocultas se preferir */
-        width: 10px;
-        height: 10px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid var(--vidro);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        flex-shrink: 0;
+    }
+
+    .arrow-btn svg {
+        width: 18px;
+        height: 18px;
     }
 }
 
