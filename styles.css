@@ -117,6 +117,7 @@ nav ul li a:hover::after {
 .foto-perfil {
     width: 350px;
     height: 350px;
+    max-width: 90%;
     box-shadow: 5px 10px 20px rgba(79, 70, 229, 0.3);
     border-radius: 50%;
     border: 4px solid var(--vidro);
@@ -442,6 +443,29 @@ a {
 
 /* Para telas de até 768px (Celulares e tablets em modo retrato) */
 @media (max-width: 768px) {
+
+    .foto-perfil {
+        width: 220px;
+        height: 220px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+        margin: 20px 0;
+        line-height: 1.2;
+    }
+
+    .social-sidebar {
+        position: static;
+        transform: none;
+        flex-direction: row;
+        justify-content: center;
+        margin: 20px 0;
+    }
+
+    .cabecalho {
+        padding: 100px 1rem 2rem;
+    }
 
     .projetos-wrapper {
         gap: 0.5rem;
