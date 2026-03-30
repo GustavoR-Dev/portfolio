@@ -111,6 +111,22 @@ const projectDetails = {
     }
 };
 
+// --- MENU RESPONSIVO ---
+
+const toggle = document.getElementById('menu-toggle');
+const menu = document.getElementById('menu');
+
+toggle.addEventListener('click', () => {
+    menu.classList.toggle('ativo');
+});
+
+const menuLinks = document.querySelectorAll('.menu-link');
+
+menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        menu.classList.remove('ativo');
+    });
+});
 
 //          LÓGICA DO MODAL
 
