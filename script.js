@@ -91,7 +91,7 @@ const projectDetails = {
     },
     bolaoCopa: {
         title: "Bolão Copa do Mundo 2026",
-        liveUrl: "http://localhost/bolao_copa_2026/login.html",
+        liveUrl: "https://bolaocopa.net",
         repoUrl: "https://github.com/GustavoR-Dev/bolao_copa_2026",
         gallery: ["./img/bolao-copa-index.png", "./img/bolao-copa-palpites.png", "./img/bolao-copa-jogos.png", "./img/bolao-copa-tabela.png"],
         problem: "Toda Copa do Mundo, a família se reunia para jogar bolão, mas o uso de folhas de papel tornava o processo trabalhoso. Faltava uma plataforma digital que organizasse os palpites, calculasse a pontuação e gerasse o ranking dos participantes em tempo real.",
