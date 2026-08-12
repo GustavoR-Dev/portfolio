@@ -29,15 +29,25 @@ const projectDetails = {
         challenges: "O desafio foi equilibrar estética elegante com boa performance e usabilidade em dispositivos móveis.",
         techs: ["HTML", "CSS", "JavaScript"]
     },
-    ipjacarei: {
-        title: "IP Jacareí",
-        liveUrl: "http://localhost/ipjacarei/",
-        repoUrl: "https://github.com/GustavoR-Dev/ipjacarei",
+    // ipjacarei: {
+    //     title: "IP Jacareí",
+    //     liveUrl: "http://localhost/ipjacarei/",
+    //     repoUrl: "https://github.com/GustavoR-Dev/ipjacarei",
+    //     gallery: ["./img/ipjacarei-index.png"],
+    //     problem: "A igreja não possuía um site oficial centralizando informações sobre a igreja, cultos e eventos.",
+    //     solution: "Desenvolvi um site institucional para a Igreja Impacto da Presença Jacareí, com agenda de cultos, eventos, informações sobre a liderança e conteúdos cristãos.",
+    //     challenges: "Organizar o conteúdo de forma acessível e responsiva, mantendo identidade visual simples e clara.",
+    //     techs: ["HTML", "CSS", "JavaScript"]
+    // },
+    boasvindas: {
+        title: "Boas Vindas IP Jacareí",
+        liveUrl: "https://impactodapresenca.com.br/boasvindas/",
+        repoUrl: "https://github.com/GustavoR-Dev/boasvindas",
         gallery: ["./img/ipjacarei-index.png"],
-        problem: "A igreja não possuía um site oficial centralizando informações sobre a igreja, cultos e eventos.",
-        solution: "Desenvolvi um site institucional para a Igreja Impacto da Presença Jacareí, com agenda de cultos, eventos, informações sobre a liderança e conteúdos cristãos.",
+        problem: "A igreja não possuía um site oficial de boas vindas para os visitantes.",
+        solution: "Desenvolvi um site institucional de Boas Vindaspara a Igreja Impacto da Presença Jacareí, com vídeo de Boas Vindas e um formulário de cadastro para os visitantes.",
         challenges: "Organizar o conteúdo de forma acessível e responsiva, mantendo identidade visual simples e clara.",
-        techs: ["HTML", "CSS", "JavaScript"]
+        techs: ["React", "JavaScript", "PHP", "MySQL"]
     },
     pjudicial: {
         title: "Processos Judiciais",
