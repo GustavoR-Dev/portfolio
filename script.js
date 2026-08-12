@@ -43,7 +43,7 @@ const projectDetails = {
         title: "Boas Vindas IP Jacareí",
         liveUrl: "https://impactodapresenca.com.br/boasvindas/",
         repoUrl: "https://github.com/GustavoR-Dev/boasvindas",
-        gallery: ["./img/ipjacarei-index.png"],
+        gallery: ["./img/ipjacarei-boasvindas.png"],
         problem: "A igreja não possuía um site oficial de boas vindas para os visitantes.",
         solution: "Desenvolvi um site institucional de Boas Vindaspara a Igreja Impacto da Presença Jacareí, com vídeo de Boas Vindas e um formulário de cadastro para os visitantes.",
         challenges: "Organizar o conteúdo de forma acessível e responsiva, mantendo identidade visual simples e clara.",
