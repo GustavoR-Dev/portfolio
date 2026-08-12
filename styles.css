@@ -288,8 +288,10 @@ a {
 
 .btn-tec.html { background-color: #e34c26; }
 .btn-tec.css { background-color: #264de4; }
+.btn-tec.react { background-color: #58C4DC; }
 .btn-tec.js { background-color: #f0db4f; color: #000; }
 .btn-tec.php { background-color: #8892be; }
+.btn-tec.mysql { background-color: #00758F; }
 
 .btn-repo {
     background-color: #6b46c1;
